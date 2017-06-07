@@ -58,24 +58,25 @@ button{
 }
 
 .main-container{
-  border: grey 2px dashed;
+  font-size: 40px;
+  padding: 0px 20px;
   height: 400px;
 }
 
 .time-display{
   margin: 0px 3%;
   width: auto;
-  border: black 2px solid;
-  display: block;
+  //border: green 2px solid;
+  border-bottom: white 2px solid;
+  display: flex;
+  justify-content: space-between;
   height: 230px;
 }
 
 .time-display h1{
-  font-size: 60px;
   margin: 60px 5px;
   float: left;
-  display: inline-block;
-  border: black 2px solid;
+ //border: black 2px solid;
 }
 
 .block{
@@ -94,17 +95,24 @@ button{
 }
 
 .wind-speed{
-  margin: 20px;
+  margin: 10px 3%;
+  //border: black 2px solid;
   width: auto;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
 }
 
-.wind-speed h3{
-  margin: 20px 5%;
-  font-size: 40px;
-  float: left;
+.wind-speed span{
+  font-size: 20px;
+  position: relative;
+  bottom: 20px;
 }
 
+#average-speed{
+  //border: black 2px solid;
+  margin-right: 0px;
+}
 
 .hidden{
   display: none;
@@ -120,38 +128,47 @@ button{
 }
 
 .sub-container{
-  padding: 20px 20px 10px 35px;
-  border: black 2px solid;
+  //padding: 20px 20px 10px 60px;
+  padding: 20px 20px;
   margin: 20px 10%;
   min-width: 1200px;
   top: 550px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .sub-display{
+  background-color: gray;
   border: black 2px dashed;
+  border-radius: 5px;
   margin: 10px 20px;
-  display: inline-block;
-  width: 550px;
+  max-width: 550px;
   height: 80px;
-  font-size: 25px;
+  font-size: 29px;
+  display: flex;
+  flex: 1 1 500px;
+  padding: 0px;
+  justify-content: space-between;
 }
 
 .sub-display h1{
-  display: inline-block;
-  margin-left: 20px;
+  margin: 15px 0px 0px 20px;
 }
 
+
 .sub-display h2{
-  display: inline-block;
-  float: right;
-  margin-right: 30px;
-  margin-bottom: 20px;
+  margin: 15px 20px 0px 0px;
+}
+
+.sub-display span{
+  position: relative;
+  font-size: 20px;
+  bottom:15px;  
 }
 
 .sub-display button{
-  position: relative;
-  top: 17px;
-  left: 20px;
-  border: black 2px dashed;
+  margin-left: 20px;
   font-size: 40px;
-  background: white;
+  color: white;
 }
