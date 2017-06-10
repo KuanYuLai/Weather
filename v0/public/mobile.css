@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body{
-	min-width: 460px;
+	min-width: 320px;
 	margin: 0px;
-	background-color: lightblue;
+	background-color: #71C0EF;
+	font-family: 'Roboto', sans-serif;
 }
 
 button{
@@ -16,7 +19,7 @@ img{
 
 .navbar{
 	background: white;
-	height: 40px;
+	height: 60px;
 }
 
 .nav-button{
@@ -136,7 +139,7 @@ img{
 	width: 85%;
 	height: 80px;
 	font-size: 20px;
-	color: white;	
+	color: white;
 }
 
 .sub-display h1{
