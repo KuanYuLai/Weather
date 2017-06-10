@@ -1,10 +1,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> WeatherCloud</title>
-    <link rel="stylesheet" <type="text/css" href="style.css" media="screen">
+    <link rel="stylesheet" <type="text/css" media="screen and (min-width: 641px)" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://erikflowers.github.io/weather-icons/api-list.html">
+    <link rel="stylesheet" media="screen and (max-width: 640px)" href="mobile.css">
   </head>
 
   <body>
@@ -20,8 +22,8 @@
     </header>
     
     <article class="main-display">
-      <h3 id="date"> Tuesday, May 23rd 2017 </h3>
       <h3 id="location"> Corvallis, OR </h3>
+      <h3 id="date"> Tuesday, May 23rd 2017 </h3>
       <div class="main-container">
         <div class="time-display">
           <h1> 72 <span>&#8457;<span></h1>
@@ -53,10 +55,12 @@
 
         <div class="wind-speed">
          <h3 id="average-speed"> <i class="fa fa-gear"></i> 7 <span>mph</span> </h3>
+         <div class='wind-content'>
           <h3> 3 </h3>
           <h3> 10 </h3>
           <h3> 4 </h3>
           <h3> 14 </h3>
+          </div>
         </div>
       </div>
     </article>
@@ -84,8 +88,7 @@
       </article>
 
       <article class="sub-display">
-        <button type="button"><i class="fa fa-plus"></i></button>
-        <h2> Add location </h2>
+        <button id="add-button" type="button"><i class="fa fa-plus"></i> Add location</button>
       </article>
 
     </main>

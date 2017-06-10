@@ -1,0 +1,160 @@
+body{
+	margin: 0px;
+	background-color: lightblue;
+}
+
+button{
+  background: none;
+  border: none;
+}
+
+img{
+	height: 40px;
+	width: 40px;
+}
+
+.navbar{
+	background: white;
+	height: 40px;
+}
+
+.nav-button{
+  margin-top: 2px;
+  height: 35px;
+  font-size: 20px;
+  color: rgb(79, 163, 214);
+}
+
+#setting-button{
+  float: right;
+}
+
+.main-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#date{
+	color: white;
+	font-size: 25px;
+	font-weight: lighter;
+	display: flex;
+	justify-content: space-around;
+}
+
+#location{
+	color: white;
+	font-size: 25px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.time-display{
+	//border: 2px black dashed;
+	margin-left: 30px;
+	width: 60%;
+}
+
+.time-display h1{
+	margin-left: 25px;
+	font-size: 60px;
+	color: white;
+	font-weight: bolder;
+}
+
+.time-display span{
+	font-size: 25px;
+	color: white;
+	position: relative;
+	bottom: 23px;
+	right: 13px;
+	font-weight: lighter;
+}
+
+.block{
+	//border: 2px gray solid;
+	font-size: 30px;
+	height: 60px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.block p{
+	font-weight: bold;
+	margin: auto 30px;
+
+}
+
+.block h3{
+
+	margin: 10px 50px 5px 10px;
+}
+
+
+.block img{
+	margin: auto 20px;
+}
+
+.wind-speed{
+	padding-top: 40px;
+	margin: 0px 20px;
+	width: 25%;
+	//border: 2px black dashed;
+	font-size: 30px;
+}
+
+.wind-speed h3{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+.wind-content{
+	border-left: 2px white solid;
+}
+
+#average-speed{
+	margin-top: 30px;
+	margin-left: 0px;
+	margin-bottom: 68px;
+	color: white;
+}
+
+#average-speed span{
+	position: relative;
+	right: 10px;
+	font-size: 20px;
+}
+
+.sub-container{
+	border: 2px black solid;
+	margin: 10px 10px;
+}
+
+.sub-display{
+	margin: 20px auto;
+	border: 2px black solid;
+	border-radius: 5px;
+	width: 70%;
+	height: 80px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	color: white;	
+}
+
+#add-button{
+	border: 2px gray dashed;
+	width: 900px;
+	height: inherit;
+	font-size: 30px;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0px;
+	padding-right: 35px;
+	color: white;
+}
+#add-button i{
+	margin-right: 140px;
+}

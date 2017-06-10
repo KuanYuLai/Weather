@@ -167,8 +167,17 @@ button{
   bottom:15px;  
 }
 
-.sub-display button{
-  margin-left: 20px;
-  font-size: 40px;
+#add-button{
+  border: 2px gray dashed;
+  width: 900px;
+  height: inherit;
+  font-size: 38px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+  padding-right: 35px;
   color: white;
+}
+#add-button i{
+  margin-right: 250px;
 }
