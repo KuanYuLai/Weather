@@ -1,4 +1,5 @@
 body{
+	min-width: 460px;
 	margin: 0px;
 	background-color: lightblue;
 }
@@ -50,13 +51,12 @@ img{
 }
 
 .time-display{
-	//border: 2px black dashed;
-	margin-left: 30px;
+	margin-left: 20px;
 	width: 60%;
 }
 
 .time-display h1{
-	margin-left: 25px;
+	margin-left: 35px;
 	font-size: 60px;
 	color: white;
 	font-weight: bolder;
@@ -72,7 +72,6 @@ img{
 }
 
 .block{
-	//border: 2px gray solid;
 	font-size: 30px;
 	height: 60px;
 	margin-bottom: 10px;
@@ -82,25 +81,24 @@ img{
 
 .block p{
 	font-weight: bold;
-	margin: auto 30px;
+	margin: auto 5px;
 
 }
 
 .block h3{
 
-	margin: 10px 50px 5px 10px;
+	margin: 10px 10px 5px 5px;
 }
 
 
 .block img{
-	margin: auto 20px;
+	margin: auto 5px;
 }
 
 .wind-speed{
 	padding-top: 40px;
 	margin: 0px 20px;
 	width: 25%;
-	//border: 2px black dashed;
 	font-size: 30px;
 }
 
@@ -128,33 +126,50 @@ img{
 }
 
 .sub-container{
-	border: 2px black solid;
-	margin: 10px 10px;
+	margin: 5px 5px;
 }
 
 .sub-display{
+	background-color: gray;
 	margin: 20px auto;
-	border: 2px black solid;
 	border-radius: 5px;
-	width: 70%;
+	width: 85%;
 	height: 80px;
-	display: flex;
-	justify-content: space-around;
 	font-size: 20px;
 	color: white;	
 }
 
+.sub-display h1{
+	margin-left: 20px;
+	display: flex;
+	float: left;
+}
+
+.sub-display h2{
+	margin-right: 20px;
+	display: flex;
+	float: right;
+}
+
 #add-button{
-	border: 2px gray dashed;
-	width: 900px;
+	width: 85%;
 	height: inherit;
 	font-size: 30px;
-	display: flex;
-	justify-content: flex-end;
 	margin: 0px;
-	padding-right: 35px;
+	display: block;
 	color: white;
+	margin-left: 20px;
 }
+
+
 #add-button i{
-	margin-right: 140px;
+	margin-right: 30px;
+}
+
+#add-button:focus{
+	//outline: 0;
+}
+
+.hidden{
+	display: none;
 }
