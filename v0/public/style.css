@@ -1,187 +1,235 @@
-@media (min-width: 768px) {
+@media (min-width: 640px) {
 
-  body{
-    margin: 0px;
-    background-color: rgb(103, 186, 254);
+  /* change to double column for bottom temps. */
+
+  main{
+    margin-left: calc(50% - 320px);
   }
 
-  .navbar{
-    background-color: rgb(255, 255, 255);
-    height: 40px;
-  }
-
-  button{
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-button{
-    margin-top: 2px;
-    height: 35px;
-    font-size: 25px;
-    color: rgb(79, 163, 214);
-  }
-
-  #setting-button{
-    float: right;
-
-  }
-
-  #date{
-    margin-left: 10px;
-    width: 400px;
-    font-size: 25px;
-    border: 2px black solid;
-    display: inline-block;
-  }
-
-  #location{
-    font-size: 25px;
-    margin-right: 10px;
-    float: right;
-    border: 2px black solid;
-    display: inline-block;
-  }
-
-  .main-display{
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 50px 10% 10px 10%;
-    border: black 2px solid;
-    border-radius: 15px;
-    width: 80%;
-    max-height: 500px;
-    min-width: 1260px;
-  }
-
-  .main-display img{
-    height: 80px;
-    width: 80px;
-  }
-
-  .main-container{
-    font-size: 40px;
-    padding: 0px 20px;
-    height: 400px;
-  }
-
-  .time-display{
-    margin: 0px 3%;
-    width: auto;
-    //border: green 2px solid;
-    border-bottom: white 2px solid;
-    display: flex;
-    justify-content: space-between;
-    height: 230px;
-  }
-
-  .time-display h1{
-    margin: 60px 5px;
+  article{
     float: left;
-   //border: black 2px solid;
   }
 
-  .block{
-    font-size: 25px;
-    justify-content: space-between;
-    text-align: center;
-    margin: 5px 5%;
-    float: left;
-    border: black 2px solid;
-    width: 100px;
-    height: 200px;
-  }
-
-  .block h3{
-    margin: 5px;
-  }
-
-  .wind-speed{
-    margin: 10px 3%;
-    //border: black 2px solid;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 100px;
-  }
-
-  .wind-speed span{
-    font-size: 20px;
-    position: relative;
-    bottom: 20px;
-  }
-
-  #average-speed{
-    //border: black 2px solid;
-    margin-right: 0px;
-  }
-
-  .hidden{
-    display: none;
-  }
-
-
-  .popout{
-    position: fixed;;
-    background-color: #fff;
-    overflow: scroll;
-
-
-  }
-
-  .sub-container{
-    //padding: 20px 20px 10px 60px;
-    padding: 20px 20px;
-    margin: 20px 10%;
-    min-width: 1200px;
-    top: 550px;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
   .sub-display{
-    background-color: gray;
-    border: black 2px dashed;
-    border-radius: 5px;
-    margin: 10px 20px;
-    max-width: 550px;
-    height: 80px;
-    font-size: 29px;
-    display: flex;
-    flex: 1 1 500px;
-    padding: 0px;
-    justify-content: space-between;
-  }
+    max-width: 300px;
 
-  .sub-display h1{
-    margin: 15px 0px 0px 20px;
-  }
-
-
-  .sub-display h2{
-    margin: 15px 20px 0px 0px;
-  }
-
-  .sub-display span{
-    position: relative;
-    font-size: 20px;
-    bottom:15px;
-  }
-
-  #add-button{
-    border: 2px gray dashed;
-    width: 900px;
-    height: inherit;
-    font-size: 38px;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0px;
-    padding-right: 35px;
-    color: white;
-  }
-  #add-button i{
-    margin-right: 250px;
   }
 
 }
+
+@media (min-width: 768px) {
+
+  /* Change to forecast wide view. */
+  main{
+    margin-left: calc(50% - 384px);
+    max-width: 768px;
+  }
+
+  .sub-display{
+    max-width: 364px;
+  }
+
+  .sub-display h1{
+    margin-top: 30px;
+    font-size: 36pt;
+    margin-left: 35px;
+  }
+
+  .sub-display h2{
+    margin-top: -40px;
+    margin-bottom: 42px;
+    margin-right: 40px;
+  }
+
+}
+
+
+
+
+
+
+
+
+/*body{
+  margin: 0px;
+  background-color: rgb(103, 186, 254);
+}
+
+.navbar{
+  background-color: rgb(255, 255, 255);
+  height: 40px;
+}
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-button{
+  margin-top: 2px;
+  height: 35px;
+  font-size: 25px;
+  color: rgb(79, 163, 214);
+}
+
+#setting-button{
+  float: right;
+
+}
+
+#date{
+  margin-left: 10px;
+  width: 400px;
+  font-size: 25px;
+  border: 2px black solid;
+  display: inline-block;
+}
+
+#location{
+  font-size: 25px;
+  margin-right: 10px;
+  float: right;
+  border: 2px black solid;
+  display: inline-block;
+}
+
+.main-display{
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 50px 10% 10px 10%;
+  border: black 2px solid;
+  border-radius: 15px;
+  width: 80%;
+  max-height: 500px;
+  min-width: 1260px;
+}
+
+.main-display img{
+  height: 80px;
+  width: 80px;
+}
+
+.main-container{
+  font-size: 40px;
+  padding: 0px 20px;
+  height: 400px;
+}
+
+.time-display{
+  margin: 0px 3%;
+  width: auto;
+  //border: green 2px solid;
+  border-bottom: white 2px solid;
+  display: flex;
+  justify-content: space-between;
+  height: 230px;
+}
+
+.time-display h1{
+  margin: 60px 5px;
+  float: left;
+ //border: black 2px solid;
+}
+
+.block{
+  font-size: 25px;
+  justify-content: space-between;
+  text-align: center;
+  margin: 5px 5%;
+  float: left;
+  border: black 2px solid;
+  width: 100px;
+  height: 200px;
+}
+
+.block h3{
+  margin: 5px;
+}
+
+.wind-speed{
+  margin: 10px 3%;
+  //border: black 2px solid;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+}
+
+.wind-speed span{
+  font-size: 20px;
+  position: relative;
+  bottom: 20px;
+}
+
+#average-speed{
+  //border: black 2px solid;
+  margin-right: 0px;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.popout{
+  position: fixed;;
+  background-color: #fff;
+  overflow: scroll;
+
+
+}
+
+.sub-container{
+  //padding: 20px 20px 10px 60px;
+  padding: 20px 20px;
+  margin: 20px 10%;
+  min-width: 1200px;
+  top: 550px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sub-display{
+  background-color: gray;
+  border: black 2px dashed;
+  border-radius: 5px;
+  margin: 10px 20px;
+  max-width: 550px;
+  height: 80px;
+  font-size: 29px;
+  display: flex;
+  flex: 1 1 500px;
+  padding: 0px;
+  justify-content: space-between;
+}
+
+.sub-display h1{
+  margin: 15px 0px 0px 20px;
+}
+
+
+.sub-display h2{
+  margin: 15px 20px 0px 0px;
+}
+
+.sub-display span{
+  position: relative;
+  font-size: 20px;
+  bottom:15px;
+}
+
+#add-button{
+  border: 2px gray dashed;
+  width: 900px;
+  height: inherit;
+  font-size: 38px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+  padding-right: 35px;
+  color: white;
+}
+#add-button i{
+  margin-right: 250px;
+}*/

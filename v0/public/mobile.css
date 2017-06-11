@@ -32,15 +32,6 @@ a{
 	margin: 0;
 	color: white;
 }
-/*button{
-  background: none;
-  border: none;
-}*/
-
-/*img{
-	height: 40px;
-	width: 40px;
-}*/
 
 nav{
 	background-color: rgba(255,255,255,0.9);
@@ -98,6 +89,9 @@ nav{
 main{
 	/*display: flex;
 	justify-content: flex-end;*/
+	background-color: green;
+	float:left;
+	max-width: 640px;
 }
 
 article{
@@ -112,11 +106,6 @@ article{
 
 .local-forecast{
 	background-color: rgba(0,0,0,0);
-}
-
-.main-container{
-	display: flex;
-	flex-wrap: wrap;
 }
 
 #location{
@@ -323,7 +312,7 @@ article{
 	font-size: 14pt;
 	border: 1px solid #71C0EF;
 	border-radius: 2px;
-	color: #303030;
+	color: #71C0EF;
 }
 
 #popout input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -373,6 +362,7 @@ article{
 	width: calc(100% - 80px);
 	padding-top: 12px;
 	padding-bottom: 12px;
+	border-radius: 2px;
 	transition: background-color 0.2s;
 }
 
