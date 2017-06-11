@@ -20,7 +20,7 @@
 
     <main>
 
-      <article>
+      <article class='local-forecast'>
 
         <div class='forecast-header'>
           <h2 id="location">Corvallis, OR</h2>
@@ -57,7 +57,7 @@
 
       </article>
 
-      <!-- <article class="sub-display">
+      <article class="sub-display">
         <h1>51<span>&#8457;</span></h1>
         <h2>London, England</h2>
       </article>
@@ -69,7 +69,7 @@
 
       <article class="sub-display">
         <h1>81<span>&#8457;</span></h1>
-        <h2>Sandiego, California</h2>
+        <h2>SanDiego, California</h2>
       </article>
 
       <article class="sub-display">
@@ -77,21 +77,20 @@
         <h2>Paris, France</h2>
       </article>
 
-      <article class="sub-display">
-        <button id="add-button" type="button"><i class="fa fa-plus"></i> Add location</button>
-      </article> -->
+      <a id='addLocation' href='#'><article id='add-button' class="sub-display"><p> + Add Location</p></article></a>
 
     </main>
 
-    <div class="hidden">
-      <div class="popout">
-        <h2>New Location</h2>
-        <input type="text" placeholder="Zip Code">
-        <button type="button">Add</button>
-        <button type="button">Cancel</button>
-      </div>
+    <div id='backdrop' class='hidden'></div>
+    <div id='popout' class='hidden'>
+      <a class='close-btn' href='#'></a>
+      <h2>New Location</h2>
+      <input type="text" placeholder="Zip Code  ">
+      <a class='add-btn' href='#'><p>Add</p></a>
+      <a class='cancel-btn' href='#'><p>Cancel</p></a>
     </div>
 
   </body>
 
+  <script src="main.js" charset="utf-8"></script>
 </html>

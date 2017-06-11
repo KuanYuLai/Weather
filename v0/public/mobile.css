@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900');
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 body{
 	min-width: 320px;
 	margin: 0px;
@@ -23,6 +30,7 @@ h3{
 a{
 	text-decoration: none;
 	margin: 0;
+	color: white;
 }
 /*button{
   background: none;
@@ -74,6 +82,13 @@ nav{
 	margin-top: 18px;
 	height: 23px;
 	margin-right: 15px;
+	transition: transform 0.3s;
+}
+
+#setting-icon:hover{
+	-ms-transform: rotate(32deg);
+  -webkit-transform: rotate(32deg);
+  transform: rotate(32deg);
 }
 
 #setting-icon img{
@@ -93,6 +108,10 @@ article{
 	border-radius: 8px;
 	width: calc(100% - 20px);
 	margin: 10px;
+}
+
+.local-forecast{
+	background-color: rgba(0,0,0,0);
 }
 
 .main-container{
@@ -174,7 +193,7 @@ article{
 	float: left;
 	width: 50px;
 	/*background-color: green;*/
-	margin-top: -230px;
+	margin-top: -235px;
 }
 
 #current-speed{
@@ -205,7 +224,7 @@ article{
 }
 
 #first-wind{
-	padding-top: 10px;
+	padding-top: 15px;
 }
 
 #second-wind{
@@ -220,107 +239,156 @@ article{
 	padding-top: 24px;
 }
 
-
-
-
-
-
-/* ------- */
-
-
-
-
-/*.time-display{
-	margin-left: 20px;
-	width: 60%;
-}
-
-.time-display h1{
-	margin-left: 35px;
-	font-size: 60px;
-	color: white;
-	font-weight: bolder;
-}
-
-.time-display span{
-	font-size: 25px;
-	color: white;
-	position: relative;
-	bottom: 23px;
-	right: 13px;
-	font-weight: lighter;
-}
-
-.block{
-	font-size: 30px;
-	height: 60px;
-	margin-bottom: 10px;
-	display: flex;
-	justify-content: flex-end;
-}
-
-.block p{
-
-	margin: auto 5px;
-
-}
-
-.block h3{
-
-	margin: 10px 10px 5px 5px;
-}
-
-
-.block img{
-	margin: auto 5px;
-}
-
-
-
-.sub-container{
-	margin: 5px 5px;
-}
-
 .sub-display{
-	background-color: gray;
-	margin: 20px auto;
-	border-radius: 5px;
-	width: 85%;
-	height: 80px;
-	font-size: 20px;
-	color: white;
+
 }
 
 .sub-display h1{
+	position: relative;
+	width: 50px;
+	font-size: 22pt;
 	margin-left: 20px;
-	display: flex;
-	float: left;
+	margin-top: 20px;
 }
 
 .sub-display h2{
-	margin-right: 20px;
-	display: flex;
+	position: relative;
 	float: right;
+	font-size: 16pt;
+	font-weight: 100;
+	letter-spacing: 0.7;
+	margin-top: -30px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.sub-display h1 span{
+	position: relative;
+	top: -5px;
+	font-size: 12pt;
+	font-weight: 100;
 }
 
 #add-button{
-	width: 85%;
-	height: inherit;
-	font-size: 30px;
-	margin: 0px;
+	transition: background-color 0.3s;
+}
+
+#add-button:hover{
+	background-color: rgba(255,255,255,0.45);
+}
+
+#add-button p{
+	position: relative;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	margin-left: 25px;
+
+}
+
+#backdrop{
+	position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.4s;
+}
+
+#popout{
+	position: fixed;
+	width: 250px;
+	height: 280px;
+	background-color: white;
+	z-index: 1001;
+	top: 20vh;
+	margin-left: calc(50% - 125px);
+	border-radius: 2px;
+	box-shadow: 0px 15px 70px rgba(0,0,0,0.28);
+}
+
+#popout h2{
+	color: #71C0EF;
+	margin-top: 40px;
+	text-align: center;
+}
+
+#popout input{
+	margin-top: 20px;
+	width: calc(100% - 80px);
+	margin-left: 40px;
+	padding-left: 10px;
+	height: 45px;
+	font-size: 14pt;
+	border: 1px solid #71C0EF;
+	border-radius: 2px;
+	color: #303030;
+}
+
+#popout input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-align: center;
+	color: #71C0EF;
+	font-weight: 100;
+}
+#popout input::-moz-placeholder { /* Firefox 19+ */
+  text-align: center;
+	color: #71C0EF;
+	font-weight: 100;
+}
+#popout input:-ms-input-placeholder { /* IE 10+ */
+  text-align: center;
+	color: #71C0EF;
+	font-weight: 100;
+}
+#popout input:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+	color: #71C0EF;
+	font-weight: 100;
+}
+
+.close-btn{
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 20px;
+	height: 20px;
+	background-image: url(assets/close-btn.png);
+	background-size: 20px 20px;
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+
+.close-btn:hover{
+	opacity: 1;
+}
+
+.add-btn, .cancel-btn{
+	background-color: #71C0EF;
+	margin: 0;
+	position: relative;
 	display: block;
-	color: white;
-	margin-left: 20px;
+	margin-left: 40px;
+	margin-top: 10px;
+	width: calc(100% - 80px);
+	padding-top: 12px;
+	padding-bottom: 12px;
+	transition: background-color 0.2s;
 }
 
-
-#add-button i{
-	margin-right: 30px;
+.add-btn:hover, .cancel-btn:hover{
+	background-color: #9CD2F2;
 }
 
-#add-button:focus{
-	//outline: 0;
-}*/
+.add-btn p{
+	text-align: center;
+	margin: 0;
+}
+
+.cancel-btn p{
+	text-align: center;
+	margin: 0;
+}
 
 .hidden{
 	display: none;
