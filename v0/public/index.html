@@ -2,71 +2,61 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> WeatherCloud</title>
-    <link rel="stylesheet" <type="text/css" media="screen and (min-width: 641px)" href="style.css">
+    <title>WeatherCloud</title>
+    <link rel="stylesheet" type="text/css" href="mobile.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://erikflowers.github.io/weather-icons/api-list.html">
-    <link rel="stylesheet" media="screen and (max-width: 640px)" href="mobile.css">
+
   </head>
 
   <body>
 
     <header>
-      <nav class="navbar">
-        <button type="button" class="nav-button" id="home-button">
-          <i class="fa fa-cloud">Weather<span>Cloud</span></i>
-        </button>
-
-        <button type="button" class="nav-button" id="setting-button"><i class="fa fa-gear"></i></button>
+      <nav>
+        <a href="#" class="nav-item" id="logo"><img src='assets/cloud_sm.png'></img><p>Weather<span>Cloud<span></p></a>
+        <a href="#" class="nav-item" id="setting-icon"><img src='assets/settings-icon.png'></img></a>
       </nav>
     </header>
-    
-    <article class="main-display">
-      <h3 id="location"> Corvallis, OR </h3>
-      <h3 id="date"> Tuesday, May 23rd 2017 </h3>
-      <div class="main-container">
-        <div class="time-display">
-          <h1> 72 <span>&#8457;<span></h1>
-          <div class="block" id="noon">
-              <p> noon </p>
-              <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-              <h3> 74 </h3>
-          </div>
 
-          <div class="block" id="afternoon">
-            <p> afternoon </p>
-            <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-            <h3> 75 </h3>
-          </div>
+    <main>
 
-          <div class="block">
-            <p> evening </p>
-            <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-            <h3> 67 </h3>
-          </div>
+      <article class='local-forecast'>
 
-          <div class="block">
-            <p> tonight </p>
-            <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-            <h3> 47 </h3>
-          </div>
-
+        <div class='forecast-header'>
+          <h2 id="location">Corvallis, OR</h2>
+          <h3 id="date">Tuesday, May 23rd</h3>
+          <h1 id="main-temp"> 72 <span>&#8457;<span></h1>
         </div>
 
-        <div class="wind-speed">
-         <h3 id="average-speed"> <i class="fa fa-gear"></i> 7 <span>mph</span> </h3>
-         <div class='wind-content'>
-          <h3> 3 </h3>
-          <h3> 10 </h3>
-          <h3> 4 </h3>
-          <h3> 14 </h3>
+        <div class="forecast-item">
+            <p class='timeOfDay'>noon</p> <img src="assets/sun.png"> <p class='subTemp'>74</p>
+        </div>
+
+        <div class="forecast-item">
+            <p class='timeOfDay'>afternoon</p> <img src="assets/sun.png"> <p class='subTemp'>75</p>
+        </div>
+
+        <div class="forecast-item">
+            <p class='timeOfDay'>evening</p> <img src="assets/sun.png"> <p class='subTemp'>67</p>
+        </div>
+
+        <div class="forecast-item">
+            <p class='timeOfDay'>tonight</p> <img src="assets/sun.png"> <p class='subTemp'>47</p>
+        </div>
+
+        <div class="wind-section">
+          <h3 id="current-speed">7<span>mph</span></h3>
+          <img src="assets/wind-sm.png">
+          <div class='wind-wrapper'>
+            <p id='first-wind'>3</p>
+            <p id='second-wind'>10</p>
+            <p id='third-wind'>4</p>
+            <p id='fourth-wind'>14</p>
           </div>
         </div>
-      </div>
-    </article>
 
-    
-    <main class="sub-container">
+      </article>
+
       <article class="sub-display">
         <h1>51<span>&#8457;</span></h1>
         <h2>London, England</h2>
@@ -79,7 +69,7 @@
 
       <article class="sub-display">
         <h1>81<span>&#8457;</span></h1>
-        <h2>Sandiego, California</h2>
+        <h2>SanDiego, California</h2>
       </article>
 
       <article class="sub-display">
@@ -87,21 +77,20 @@
         <h2>Paris, France</h2>
       </article>
 
-      <article class="sub-display">
-        <button id="add-button" type="button"><i class="fa fa-plus"></i> Add location</button>
-      </article>
+      <a id='addLocation' href='#'><article id='add-button' class="sub-display"><p> + Add Location</p></article></a>
 
     </main>
 
-    <div class="hidden">
-      <div class="popout">
-        <h2>New Location</h2>
-        <input type="text" placeholder="Zip Code">
-        <button type="button">Add</button>
-        <button type="button">Cancel</button>
-      </div>
+    <div id='backdrop' class='hidden'></div>
+    <div id='popout' class='hidden'>
+      <a class='close-btn' href='#'></a>
+      <h2>New Location</h2>
+      <input type="text" placeholder="Zip Code  ">
+      <a class='add-btn' href='#'><p>Add</p></a>
+      <a class='cancel-btn' href='#'><p>Cancel</p></a>
     </div>
 
   </body>
 
+  <script src="main.js" charset="utf-8"></script>
 </html>
