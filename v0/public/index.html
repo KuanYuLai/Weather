@@ -12,80 +12,76 @@
   <body>
 
     <header>
-      <nav class="navbar">
-        <a class="nav-button" id="home-button">WeatherCloud</a>
-        <a class="nav-button" id="setting-button"></a>
+      <nav>
+        <a href="#" class="nav-item" id="logo"><img src='assets/cloud_sm.png'></img><p>Weather<span>Cloud<span></p></a>
+        <a href="#" class="nav-item" id="setting-icon"><img src='assets/settings-icon.png'></img></a>
       </nav>
     </header>
 
     <main>
-    <h2 id="location"> Corvallis, OR </h2>
-    <h3 id="date"> Tuesday, May 23rd 2017 </h3>
-    <div class="main-container">
-      <div class="time-display">
-        <h1> 72 <span>&#8457;<span></h1>
-        <div class="block" id="noon">
-            <p> noon </p>
-            <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-            <p> 74 </p>
+
+      <article>
+
+        <div class='forecast-header'>
+          <h2 id="location">Corvallis, OR</h2>
+          <h3 id="date">Tuesday, May 23rd</h3>
+          <h1 id="main-temp"> 72 <span>&#8457;<span></h1>
         </div>
 
-        <div class="block" id="afternoon">
-          <p> afternoon </p>
-          <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-          <p> 75 </p>
+        <div class="forecast-item">
+            <p class='timeOfDay'>noon</p> <img src="assets/sun.png"> <p class='subTemp'>74</p>
         </div>
 
-        <div class="block">
-          <p> evening </p>
-          <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-          <p> 67 </p>
+        <div class="forecast-item">
+            <p class='timeOfDay'>afternoon</p> <img src="assets/sun.png"> <p class='subTemp'>75</p>
         </div>
 
-        <div class="block">
-          <p> tonight </p>
-          <img src="http://icons.iconarchive.com/icons/custom-icon-design/weather/256/Sunny-icon.png">
-          <p> 47 </p>
+        <div class="forecast-item">
+            <p class='timeOfDay'>evening</p> <img src="assets/sun.png"> <p class='subTemp'>67</p>
         </div>
 
-      </div>
-
-      <div class="wind-speed">
-       <h3 id="average-speed"> <i class="fa fa-gear"></i> 7 <span>mph</span> </h3>
-       <div class='wind-content'>
-        <h3> 3 </h3>
-        <h3> 10 </h3>
-        <h3> 4 </h3>
-        <h3> 14 </h3>
+        <div class="forecast-item">
+            <p class='timeOfDay'>tonight</p> <img src="assets/sun.png"> <p class='subTemp'>47</p>
         </div>
-      </div>
-    </div>
 
-    <article class="sub-display">
-      <h1>51<span>&#8457;</span></h1>
-      <h2>London, England</h2>
-    </article>
+        <div class="wind-section">
+          <h3 id="current-speed">7<span>mph</span></h3>
+          <img src="assets/wind-sm.png">
+          <div class='wind-wrapper'>
+            <p id='first-wind'>3</p>
+            <p id='second-wind'>10</p>
+            <p id='third-wind'>4</p>
+            <p id='fourth-wind'>14</p>
+          </div>
+        </div>
 
-    <article class="sub-display">
-      <h1>49<span>&#8457;</span></h1>
-      <h2>Raintown, Indiana</h2>
-    </article>
+      </article>
 
-    <article class="sub-display">
-      <h1>81<span>&#8457;</span></h1>
-      <h2>Sandiego, California</h2>
-    </article>
+      <!-- <article class="sub-display">
+        <h1>51<span>&#8457;</span></h1>
+        <h2>London, England</h2>
+      </article>
 
-    <article class="sub-display">
-      <h1>53<span>&#8457;</span></h1>
-      <h2>Paris, France</h2>
-    </article>
+      <article class="sub-display">
+        <h1>49<span>&#8457;</span></h1>
+        <h2>Raintown, Indiana</h2>
+      </article>
 
-    <article class="sub-display">
-      <button id="add-button" type="button"><i class="fa fa-plus"></i> Add location</button>
-    </article>
+      <article class="sub-display">
+        <h1>81<span>&#8457;</span></h1>
+        <h2>Sandiego, California</h2>
+      </article>
 
-  </main>
+      <article class="sub-display">
+        <h1>53<span>&#8457;</span></h1>
+        <h2>Paris, France</h2>
+      </article>
+
+      <article class="sub-display">
+        <button id="add-button" type="button"><i class="fa fa-plus"></i> Add location</button>
+      </article> -->
+
+    </main>
 
     <div class="hidden">
       <div class="popout">
