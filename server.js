@@ -12,12 +12,6 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-
-app.get('/twits/:index', function(req, res, next){
- console.log("==url params for request: ", req.params);
-  next();
-});
-
 //statically serve v0/public files
 app.use(express.static(path.join(__dirname, 'v0/public')));
 
@@ -47,13 +41,25 @@ function httpGet() {
         spot: {
           temperature: weather.main.temp,
           location: weather.name
-        }
+        },
       };
       return templateArgs;
     }
   };
 //xhr.send();
 }
+
+//post handler
+app.post( , function(req, res, next) {
+
+  fs.writeFile('zip.json', JSON.stringify(zipData), function(err) {
+    if (err) {
+      res.status(500).send("Unable to save zip to \"database\"");
+    } else {
+      res.status(200).send();
+    }
+  });
+});
 
 //404 handler
 app.get('*',function(req,res,next){
