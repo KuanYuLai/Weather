@@ -1,0 +1,22 @@
+{{>header}}
+
+    <main>
+
+        {{>forecast}}
+
+      {{#each spot}}
+        {{>subDisplay}}
+      {{/each}}
+
+      <a id='addLocation' href='#'><article id='add-button' class="sub-display"><p> + Add Location</p></article></a>
+
+    </main>
+
+    <div id='backdrop' class='hidden'></div>
+    <div id='popout' class='hidden'>
+      <a class='close-btn' href='#'></a>
+      <h2>New Location</h2>
+      <input type="text" placeholder="Zip Code  ">
+      <a class='add-btn' href='#'><p>Add</p></a>
+      <a class='cancel-btn' href='#'><p>Cancel</p></a>
+    </div>

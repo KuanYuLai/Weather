@@ -1,0 +1,24 @@
+{
+  "main": {
+    "date": "Tuesday ,May 23rd",
+    "location": "Corvallis, OR"
+  },
+  "sub": [
+  {
+    "location": "London, England",
+    "temperature": "51"
+  },
+  {
+    "location": "Raintown, Indiana",
+    "temperature": "49"
+  },
+  {
+    "location": "SanDiego, California",
+    "temperature": "81"
+  },
+  {
+    "location": "Paris, France",
+    "temperature": "53"
+  }
+]
+}

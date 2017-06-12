@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-# final-project-group-10
-=======
 # Weather-web-app
 final-project-weather-web-app created by Group 10
 
@@ -11,4 +9,6 @@ final-project-weather-web-app created by Group 10
     their information again. We could store the user’s location in a cookie so if they revisit their location would not change. 
     If we need more pages we could implement a week forecast or a 3/4 day forecast.https://openweathermap.org/api is an example
     of an open source api. We’d need to ask the instructor first if it is alright for us to use an api.
->>>>>>> a7f86942db0ccf420cda845884915e61f2a3cb56
+=======
+# final-project-group-10
+>>>>>>> 86218d4... Create README.md
