@@ -35,6 +35,8 @@ function add(){
   var val_zip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip.toString());
   if(val_zip){
     store_zip(zip);
+    add_dom(zip);
+    hide();
   }else{
     console.log("Error: Invalid zip code.");
     alert("Invalid zip code!");
@@ -69,8 +71,27 @@ function store_zip(zip) {
 Function: add_dom()
 Description: adds the sub-display for the new zip code to the DOM
 */
-function add_dow(zip) {
-  
+function add_dom(zip) {
+  var xhr = new XMLHttpRequest();
+  var method = "GET";
+  var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip.toString() + ",us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial";
+  xhr.open(method, url, true);
+  xhr.onreadystatechange = function () {
+    if(xhr.readyState == 4) {
+      var weather = JSON.parse(xhr.responseText);
+      var templateArgs = {
+        temperature: weather.main.temp,
+        location: weather.name,
+      };
+      return templateArgs;
+    }
+  };
+  var subDisplayTemplate = Handlebars.templates.subDisplay;
+
+  var subDisplayHTML = subDisplayTemplate(templateArgs);
+
+  var subDisplayContainer = document.getElementsByClass('sub-display-container')[0];
+  subDisplayContainer.insertAdjacentHTML('beforeend',subDisplayHTML);
 }
 
 //listeners

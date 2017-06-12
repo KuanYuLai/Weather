@@ -4,9 +4,11 @@
 
       {{>forecast local}}
 
-      {{#each spot}}
+      <div class='sub-display-container'>
+        {{#each spot}}
         {{>subDisplay}}
-      {{/each}}
+        {{/each}}
+      </div>
 
       <a id='addLocation' href='#'><article id='add-button' class="sub-display"><p> + Add Location</p></article></a>
 
