@@ -50,16 +50,16 @@ function httpGet() {
 }
 
 //post handler
-app.post( , function(req, res, next) {
-
-  fs.writeFile('zip.json', JSON.stringify(zipData), function(err) {
-    if (err) {
-      res.status(500).send("Unable to save zip to \"database\"");
-    } else {
-      res.status(200).send();
-    }
-  });
-});
+// app.post( , function(req, res, next) {
+//
+//   fs.writeFile('zip.json', JSON.stringify(zipData), function(err) {
+//     if (err) {
+//       res.status(500).send("Unable to save zip to \"database\"");
+//     } else {
+//       res.status(200).send();
+//     }
+//   });
+// });
 
 //404 handler
 app.get('*',function(req,res,next){
