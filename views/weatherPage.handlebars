@@ -2,7 +2,7 @@
 
     <main>
 
-      {{>forecast}}
+      {{>forecast local}}
 
       {{#each spot}}
         {{>subDisplay}}
@@ -16,7 +16,7 @@
     <div id='popout' class='hidden'>
       <a class='close-btn' href='#'></a>
       <h2>New Location</h2>
-      <input type="text" placeholder="Zip Code  ">
+      <input id="zip-input" type="text" placeholder="Zip Code  ">
       <a class='add-btn' href='#'><p>Add</p></a>
       <a class='cancel-btn' href='#'><p>Cancel</p></a>
     </div>

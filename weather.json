@@ -1,8 +1,20 @@
 {
-  "main": {
+  "main":
+    {
     "date": "Tuesday ,May 23rd",
-    "location": "Corvallis, OR"
-  },
+    "location": "Corvallis, OR",
+    "degree": 73,
+    "noonD": 75,
+    "afternoonD": 76,
+    "eveningD": 68,
+    "tonightD": 48,
+    "curSp": 8,
+    "OW": 4,
+    "SW": 11,
+    "TW": 5,
+    "FW": 15
+    }
+,
   "sub": [
   {
     "location": "London, England",

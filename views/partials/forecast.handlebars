@@ -3,33 +3,41 @@
   <div class='forecast-header'>
     <h2 id="location">{{location}}</h2>
     <h3 id="date">{{date}}</h3>
-    <h1 id="main-temp"> 72 <span>&#8457;<span></h1>
+    <h1 id="main-temp"> {{temp}} <span>&#8457;<span></h1>
   </div>
 
   <div class="forecast-item">
-      <p id='first-time' class='timeOfDay'>noon</p> <img src="assets/sunny-use.png"> <p class='subTemp'>74</p>
+      <p id='first-time' class='timeOfDay'>noon</p>
+      <img src="assets/sunny-use.png">
+      <p class='subTemp'>{{noonD}}</p>
   </div>
 
   <div class="forecast-item">
-      <p id='second-time' class='timeOfDay'>afternoon</p> <img src="assets/sunny-use.png"> <p class='subTemp'>75</p>
+      <p id='second-time' class='timeOfDay'>afternoon</p>
+      <img src="assets/sunny-use.png">
+      <p class='subTemp'>{{afternoonD}}</p>
   </div>
 
   <div class="forecast-item">
-      <p id='third-time' class='timeOfDay'>evening</p> <img src="assets/sunny-use.png"> <p class='subTemp'>67</p>
+      <p id='third-time' class='timeOfDay'>evening</p>
+      <img src="assets/sunny-use.png">
+      <p class='subTemp'>{{eveningD}}</p>
   </div>
 
   <div class="forecast-item">
-      <p id='fourth-time' class='timeOfDay'>tonight</p> <img src="assets/sunny-use.png"> <p class='subTemp'>47</p>
+      <p id='fourth-time' class='timeOfDay'>tonight</p>
+      <img src="assets/sunny-use.png">
+      <p class='subTemp'>{{tonightD}}</p>
   </div>
 
   <div class="wind-section">
-    <h3 id="current-speed">7<span>mph</span></h3>
+    <h3 id="current-speed">{{curSp}}<span>mph</span></h3>
     <img src="assets/wind-sm.png">
     <div class='wind-wrapper'>
-      <p id='first-wind'>3</p>
-      <p id='second-wind'>10</p>
-      <p id='third-wind'>4</p>
-      <p id='fourth-wind'>14</p>
+      <p id='first-wind'>{{OW}}</p>
+      <p id='second-wind'>{{SW}}</p>
+      <p id='third-wind'>{{TW}}</p>
+      <p id='fourth-wind'>{{FW}}</p>
     </div>
   </div>
 
