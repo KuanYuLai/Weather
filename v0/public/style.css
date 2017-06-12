@@ -27,6 +27,7 @@
 
   .sub-display{
     max-width: 364px;
+    float: left;
   }
 
   .sub-display h1{
@@ -35,201 +36,186 @@
     margin-left: 35px;
   }
 
+  .sub-display h1 span{
+  	top: -24px;
+  }
+
   .sub-display h2{
-    margin-top: -40px;
+    margin-top: -42px;
     margin-bottom: 42px;
     margin-right: 40px;
+
+  }
+
+  #add-button p{
+    margin-top: 44px;
+    margin-bottom: 44px;
+    margin-left: 38px;
+  }
+
+  .timeOfDay{
+  	float: left;
+  	font-weight: 100;
+  	font-size: 12pt;
+  }
+
+
+  .local-forecast{
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 40px;
+  }
+
+  .forecast-item{
+    /*background-color: blue;*/
+    float: left;
+    width: 100px;
+    margin: 0;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+
+  #date{
+    /*background-color: red;*/
+    float: left;
+    font-weight: 100;
+    font-size: 16px;
+    width: 350px;
+    margin-top: 20px;
+    margin-left: 25px;
+    text-align: left;
+  }
+
+  #location{
+    /*background-color: brown;*/
+    float: right;
+    text-align: right;
+    font-weight: 100;
+    font-size: 16px;
+    width: 340px;
+    margin-top: 20px;
+    margin-right: 25px;
+  }
+
+  #main-temp{
+    float: left;
+    margin-top: 50px;
+    margin-left: -320px;
+    font-size: 56pt;
+    /*background-color: purple;*/
+  }
+
+  #main-temp span{
+    top: -35px;
+  }
+
+  .timeOfDay{
+    text-align: center;
+    width: 100%;
+    /*background-color: red;*/
+    margin: 0;
+  }
+
+  .forecast-item img{
+    /*background-color: purple;*/
+    width: 80px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .subTemp{
+    /*background-color: brown;*/
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .wind-section{
+    left: 50px;
+    /*background-color: orange;*/
+    width: calc(100% - 100px);
+
+    margin: 0;
+    /*margin-top: 150px;*/
+    border-top: 1px white solid;
+  }
+
+  .wind-wrapper{
+    border: none;
+    /*background-color: blue;*/
+    margin-left: 100px;
+  }
+
+  #current-speed{
+  	float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+
+  }
+
+  .wind-section img{
+    float: left;
+    margin-left: -90px;
+    margin-top: 14px;
+  }
+
+  .wind-wrapper p{
+    float: left;
+    /*background-color: brown;*/
+    width: 40px;
+    margin-left: 80px;
+    font-weight: 100;
+  }
+
+  #first-wind, #second-wind, #third-wind, #fourth-wind{
+    padding: 0;
   }
 
 }
 
 
 
+@media (min-width: 900px) {
 
+  main{
+    margin-left: calc(50% - 450px);
+    max-width: 900px;
+  }
 
+  .sub-display {
+    max-width: 430px;
+  }
 
+  .sub-display h2{
+    font-size: 18pt;
+  }
 
+  #add-button p{
+    font-size: 18pt;
+  }
 
-/*body{
-  margin: 0px;
-  background-color: rgb(103, 186, 254);
-}
+  #date{
+    width: 410px;
+  }
 
-.navbar{
-  background-color: rgb(255, 255, 255);
-  height: 40px;
-}
+  #location{
+    width: 410px;
+  }
 
-button{
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+  #main-temp{
+    margin-left: -380px;
+    margin-right: 40px;
+  }
 
-.nav-button{
-  margin-top: 2px;
-  height: 35px;
-  font-size: 25px;
-  color: rgb(79, 163, 214);
-}
-
-#setting-button{
-  float: right;
-
-}
-
-#date{
-  margin-left: 10px;
-  width: 400px;
-  font-size: 25px;
-  border: 2px black solid;
-  display: inline-block;
-}
-
-#location{
-  font-size: 25px;
-  margin-right: 10px;
-  float: right;
-  border: 2px black solid;
-  display: inline-block;
-}
-
-.main-display{
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 50px 10% 10px 10%;
-  border: black 2px solid;
-  border-radius: 15px;
-  width: 80%;
-  max-height: 500px;
-  min-width: 1260px;
-}
-
-.main-display img{
-  height: 80px;
-  width: 80px;
-}
-
-.main-container{
-  font-size: 40px;
-  padding: 0px 20px;
-  height: 400px;
-}
-
-.time-display{
-  margin: 0px 3%;
-  width: auto;
-  //border: green 2px solid;
-  border-bottom: white 2px solid;
-  display: flex;
-  justify-content: space-between;
-  height: 230px;
-}
-
-.time-display h1{
-  margin: 60px 5px;
-  float: left;
- //border: black 2px solid;
-}
-
-.block{
-  font-size: 25px;
-  justify-content: space-between;
-  text-align: center;
-  margin: 5px 5%;
-  float: left;
-  border: black 2px solid;
-  width: 100px;
-  height: 200px;
-}
-
-.block h3{
-  margin: 5px;
-}
-
-.wind-speed{
-  margin: 10px 3%;
-  //border: black 2px solid;
-  width: auto;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 100px;
-}
-
-.wind-speed span{
-  font-size: 20px;
-  position: relative;
-  bottom: 20px;
-}
-
-#average-speed{
-  //border: black 2px solid;
-  margin-right: 0px;
-}
-
-.hidden{
-  display: none;
-}
-
-
-.popout{
-  position: fixed;;
-  background-color: #fff;
-  overflow: scroll;
-
+  .wind-wrapper{
+    border: none;
+    /*background-color: blue;*/
+    margin-left: 138px;
+  }
 
 }
-
-.sub-container{
-  //padding: 20px 20px 10px 60px;
-  padding: 20px 20px;
-  margin: 20px 10%;
-  min-width: 1200px;
-  top: 550px;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.sub-display{
-  background-color: gray;
-  border: black 2px dashed;
-  border-radius: 5px;
-  margin: 10px 20px;
-  max-width: 550px;
-  height: 80px;
-  font-size: 29px;
-  display: flex;
-  flex: 1 1 500px;
-  padding: 0px;
-  justify-content: space-between;
-}
-
-.sub-display h1{
-  margin: 15px 0px 0px 20px;
-}
-
-
-.sub-display h2{
-  margin: 15px 20px 0px 0px;
-}
-
-.sub-display span{
-  position: relative;
-  font-size: 20px;
-  bottom:15px;
-}
-
-#add-button{
-  border: 2px gray dashed;
-  width: 900px;
-  height: inherit;
-  font-size: 38px;
-  display: flex;
-  justify-content: flex-end;
-  margin: 0px;
-  padding-right: 35px;
-  color: white;
-}
-#add-button i{
-  margin-right: 250px;
-}*/
