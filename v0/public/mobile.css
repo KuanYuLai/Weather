@@ -385,3 +385,17 @@ article{
 .hidden{
 	display: none;
 }
+
+/****** Background Styles ******/
+
+#bigSun{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: calc(100% - 180px);
+  top: -180px;
+  /*background-color: purple;*/
+  background-image: url('assets/bigSun.png');
+  background-size: 400px 400px;
+  z-index: -1;
+}
