@@ -110,6 +110,8 @@ app.use(express.static(path.join(__dirname, 'v0/public')));
 app.post('/', function(req, res, next) {
   var zip = req.body.zipCode;
   var setting = req.body.setting;
+
+  if(!req.body.remove){
     fs.readFile('zip.json','utf8',function(err, data) {
       if(err){
         console.log(err);
@@ -130,7 +132,31 @@ app.post('/', function(req, res, next) {
           }
         });
       }
-    });//readFile
+    });
+  } else {
+    fs.readFile('zip.json','utf8',function(err,data){
+      if(err){
+        console.log('Error: unable to read zip.json');
+      } else {
+        var obj = JSON.parse(data);
+        var i = 0;
+        for(i = 0; i < obj.sub.length; i++){
+          if(obj.sub[i].indexOf(zip) !== -1) {
+            break;
+          }
+        }
+        console.log(JSON.stringify(obj));
+        obj.sub.splice(i,1);
+        console.log(JSON.stringify(obj));
+        var json = JSON.stringify(obj,null,2);
+        fs.writeFile('zip.json',json,'utf8',function(err){
+          if(err){
+            console.log('Error: unable to write zip.json');
+          }
+        });
+      }
+    });
+  }
 });
 
 //404 handler
