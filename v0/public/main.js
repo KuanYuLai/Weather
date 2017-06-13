@@ -74,23 +74,21 @@ Description: adds the sub-display for the new zip code to the DOM
 function add_dom(zip) {
   var xhr = new XMLHttpRequest();
   var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip.toString() + ",us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial";
+  var subDisplayTemplate = Handlebars.templates['subDisplay'];
   xhr.onreadystatechange = function () {
     if(xhr.readyState == 4) {
       var weather = JSON.parse(xhr.responseText);
-      console.log(weather.name);
       var templateArgs = {
         temperature: weather.main.temp,
         location: weather.name,
       };
-      var subDisplayTemplate = Handlebars.templates.subDisplay;
       var subDisplayHTML = subDisplayTemplate(templateArgs);
-      var subDisplayContainer = document.getElementsByClass('sub-display-container')[0];
+      var subDisplayContainer = document.getElementsByClassName('sub-display-container')[0];
       subDisplayContainer.insertAdjacentHTML('beforeend',subDisplayHTML);
     }
   };
   xhr.open("GET", url, true);
   xhr.send();
-
 }
 
 //listeners

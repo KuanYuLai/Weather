@@ -4,7 +4,10 @@
   "description": "Weather app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars views/partials/subDisplay.handlebars -f v0/public/subDisplay.js",
+    "prestart": "npm run build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
