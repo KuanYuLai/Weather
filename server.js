@@ -54,11 +54,13 @@ app.get('/', function(req, res, next){
         local: {
           temp: weather.main.temp | 0,
           location: weather.name,
-          date: today
+          date: today,
+          curSp: Math.round(weather.wind.speed)
         }
         }
         res.render('weatherPage', templatesArgs);
-        })
+      });
+
 });
 
 //post handler
