@@ -23,7 +23,6 @@ function httpGet(callback) {
   xhr.onreadystatechange = function() {
     if(this.readyState == 4) {
       var weather = JSON.parse(this.responseText);
-      console.log(weather.name);
       callback(weather);
       }
   };
@@ -40,10 +39,22 @@ app.get('/', function(req, res, next){
 
 
   httpGet(function render(weather){
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear();
+      if(dd<10){
+        dd = '0'+dd;
+      }
+      if(mm<10){
+        mm='0'+mm;
+      }
+      today = mm + '/' + dd + '/' + yyyy;
       templatesArgs = {
         local: {
           temp: weather.main.temp | 0,
-          location: weather.name
+          location: weather.name,
+          date: today
         }
         }
         res.render('weatherPage', templatesArgs);
