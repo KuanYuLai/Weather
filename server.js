@@ -32,16 +32,25 @@ function httpGet(url, callback) {
 
 var descDecider = function(desc){
 
-  if(desc == 'overcast clouds'){
-    return 'mostly-cloudy-use';
-  } else if (desc == 'clear sky') {
+  switch(desc){
+    case 'clear sky':
     return 'sunny-use';
-  } else if (desc == 'scattered clouds') {
+    break;
+
+    case 'scattered clouds':
     return 'part-cloudy-use';
-  } else if (desc == 'light rain') {
+    break;
+
+    case 'light rain':
+    return 'mostly-cloudy-use';
+    break;
+
+    case 'moderate rain': case 'overcast clouds':
     return 'cloudy-use';
-  } else {
-    return 'part-cloudy-use';
+    break;
+
+    default:
+    return 'cloudy-use';
   }
 
 }
@@ -76,13 +85,13 @@ app.get('/', function(req, res, next){
              date: today,
              temp: weather.list[0].main.temp | 0,
              noonD: weather.list[1].main.temp | 0,
-             noonImg: descDecider(weather.list[1].main.description),
+             noonImg: descDecider(weather.list[1].weather[0].description),
              afternoonD: weather.list[2].main.temp | 0,
-             afternoonImg: descDecider(weather.list[2].main.description),
+             afternoonImg: descDecider(weather.list[2].weather[0].description),
              eveningD: weather.list[3].main.temp | 0,
-             eveningImg: descDecider(weather.list[3].main.description),
+             eveningImg: descDecider(weather.list[3].weather[0].description),
              tonightD: weather.list[4].main.temp | 0,
-             tonightImg: descDecider(weather.list[4].main.description),
+             tonightImg: descDecider(weather.list[4].weather[0].description),
              curSp: weather.list[0].wind.speed | 0,
              ow: weather.list[1].wind.speed | 0,
              sw: weather.list[2].wind.speed | 0,
