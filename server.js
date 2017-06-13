@@ -15,7 +15,6 @@ app.set('view engine', 'handlebars');
 
 //statically serve v0/public files
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'v0/public')));
 
 function httpGet(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -33,7 +32,6 @@ function httpGet(url, callback) {
 
 //main handler
 app.get('/', function(req, res, next){
-
   // Get Forecast Data
   fs.readFile('zip.json', 'utf-8', function(err, data){
       if(err)
@@ -97,10 +95,9 @@ app.get('/', function(req, res, next){
         })
       }
     });//fs.readFile
-
-
-
   });
+
+app.use(express.static(path.join(__dirname, 'v0/public')));
 
 //post handler
 app.post('/', function(req, res, next) {
@@ -122,7 +119,8 @@ app.post('/', function(req, res, next) {
 });
 
 //404 handler
-app.get('*',function(req,res,next){
+app.get('*',function(req,res){
+  console.log("== error: 404");
   res.status(404);
   res.render("404Page");
 });
