@@ -50,7 +50,7 @@ var descDecider = function(desc){
     break;
 
     default:
-    return 'cloudy-use';
+    return 'part-cloudy-use';
   }
 
 }
