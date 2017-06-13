@@ -79,7 +79,7 @@ function store_zip(zip,callback) {
     callback(error);
   });
   console.log('Zip: ' + zip);
-  var post_content = { zipCode: zip.toString(), setting: false };
+  var post_content = { zipCode: zip.toString(), setting: false, remove: false };
   postRequest.send(JSON.stringify(post_content));
 }
 
@@ -102,7 +102,7 @@ function forecast_zip(zip,callback) {
     callback(error);
   });
   console.log('Zip: ' + zip);
-  var post_content = { zipCode: zip.toString(), setting: true };
+  var post_content = { zipCode: zip.toString(), setting: true, remove: false };
   postRequest.send(JSON.stringify(post_content));
 }
 
@@ -166,9 +166,27 @@ function disappear(zip){
 function: remove()
 Description: remove sub display
 */
-function remove(zip){
-  //write the remove code here
-  console.log(zip);
+function remove(zip,callback) {
+  var parent = document.querySelector('.sub-display-container');
+  var child = document.getElementById(zip);
+  parent.removeChild(child);
+
+  var postURL = "/";
+  var postRequest = new XMLHttpRequest();
+
+  postRequest.open('POST',postURL);
+  postRequest.setRequestHeader('Content-Type','application/json');
+
+  postRequest.addEventListener('load', function(event){
+    var error;
+    if(event.target.status !== 200){
+      error = event.target.response;
+    }
+    callback(error);
+  });
+  console.log('Zip: ' + zip);
+  var post_content = { zipCode: zip.toString(), setting: false , remove: true};
+  postRequest.send(JSON.stringify(post_content));
 }
 
 //listeners
