@@ -79,7 +79,10 @@ app.get('/', function(req, res, next){
         function(weather){
             var data = {
               location: weather.name,
-              temperature: weather.main.temp | 0
+              temperature: weather.main.temp | 0,
+              zipCode: value,
+              disappear: "disappear(" + value + ")",
+              appear: "appear(" + value + ")"
             };
             if(data)
               templatesArgs["sub"].push(data);

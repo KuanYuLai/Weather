@@ -81,6 +81,9 @@ function add_dom(zip) {
       var templateArgs = {
         temperature: weather.main.temp | 0,
         location: weather.name,
+        zipCode: zip,
+        disappear: "disappear(" + zip.toString() + ")",
+        appear: "appear(" + zip.toString() + ")"
       };
       var subDisplayHTML = subDisplayTemplate(templateArgs);
       var subDisplayContainer = document.getElementsByClassName('sub-display-container')[0];
@@ -92,29 +95,31 @@ function add_dom(zip) {
 }
 
 /*
-function remove()
-Description: remove sub-display
-*/
-function remove(){
-
-}
-
-/*
 function appear()
 Description: show front
 */
-function appear(){
-  document.getElementById('front').classList.remove('hidden')
-  document.getElementById('back').classList.add('hidden')
+function appear(zip){
+  var n = document.getElementById(zip).getElementsByTagName("*");
+  for(var i = 0; i<n.length; i++){
+    if(n[i].id == 'front')
+      n[i].classList.remove('hidden');
+    if(n[i].id == 'back')
+      n[i].classList.add('hidden')
+  }
 }
 
 /*
 function appear()
 Description: hide front
 */
-function disappear(){
-  document.getElementById('front').classList.add('hidden')
-  document.getElementById('back').classList.remove('hidden')
+function disappear(zip){
+  var n = document.getElementById(zip).getElementsByTagName("*");
+  for(var i = 0; i<n.length; i++){
+    if(n[i].id == 'front')
+      n[i].classList.add('hidden');
+    if(n[i].id == 'back')
+      n[i].classList.remove('hidden')
+  }
 }
 
 //listeners
@@ -123,5 +128,4 @@ function disappear(){
   document.querySelector('.add-btn').addEventListener('click', add);
   document.querySelector('.close-btn').addEventListener('click', hide);
   document.querySelector('.cancel-btn').addEventListener('click', hide);
-  document.querySelector('.sub-delete').addEventListener('click', remove);
 });
