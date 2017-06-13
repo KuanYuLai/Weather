@@ -59,12 +59,12 @@ nav{
 	width: 130px;
 	margin: 0;
 	margin-top: 17px;
-	font-weight: 100;
+	font-weight: 400;
 	letter-spacing: 0.7px;
 }
 
 #logo p span{
-	font-weight: 500;
+	font-weight: 900;
 }
 
 #setting-icon{
@@ -152,7 +152,7 @@ article{
 
 .timeOfDay{
 	float: left;
-	font-weight: 100;
+	font-weight: 400;
 	font-size: 14pt;
 	width: 100px;
 	text-align: right;
@@ -245,7 +245,7 @@ article{
 	position: relative;
 	float: right;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 	letter-spacing: 0.7;
 	margin-top: -30px;
 	margin-bottom: 20px;
@@ -256,7 +256,7 @@ article{
 	position: relative;
 	top: -5px;
 	font-size: 12pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 #add-button{
@@ -273,7 +273,7 @@ article{
 	margin-bottom: 24px;
 	margin-left: 25px;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 #backdrop{
