@@ -56,9 +56,10 @@ nav{
 #logo p{
 	float: left;
 	position: relative;
+  font-size: 14pt;
 	width: 130px;
 	margin: 0;
-	margin-top: 17px;
+	margin-top: 19px;
 	font-weight: 400;
 	letter-spacing: 0.7px;
 }
