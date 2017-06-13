@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-# Weather-web-app
-final-project-weather-web-app created by Group 10
 
-    Weather website where the homepage would change depending on the hour of the day for both the forecast and
-    background (bright blue midday but a blackish color at night). If we use an api we could get the user's location
-    via a ZIP code and display the weather information for their area.I think the best way to implement this would be to 
-    get the users data and then display the page with their location set, if they wish to change there’d be a button to get 
-    their information again. We could store the user’s location in a cookie so if they revisit their location would not change. 
-    If we need more pages we could implement a week forecast or a 3/4 day forecast.https://openweathermap.org/api is an example
-    of an open source api. We’d need to ask the instructor first if it is alright for us to use an api.
+# Weather-web-app
+final-project-weather-web-app created by Group 10: kooske, laik, engbergt.
+  Our idea is to build a weather web-app that shows temperatures of user-saved locations with their main location showing a simple forecast for the day.
+  We used this API for weather data:  https://openweathermap.org/api
 =======
 # final-project-group-10
 >>>>>>> 86218d4... Create README.md
