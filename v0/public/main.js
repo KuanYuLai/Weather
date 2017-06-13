@@ -26,15 +26,15 @@ Function: add()
 Description: checks the zip code and handles the nessesary functions
 */
 function add(){
-  // var url = "http://api.openweathermap.org/data/2.5/weather?zip=97331,us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial";
-  // loadJSON(url, gotdata);
-  // location.reload();
-
   var zip = document.getElementById('zip-input').value;
   //this is some black magic for checking zip codes
   var val_zip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip.toString());
   if(val_zip){
-    //store_zip(zip);
+    store_zip(zip,function (err) {
+      if(err){
+        console.log('Error: unable to save location');
+      }
+    });
     add_dom(zip);
     hide();
   }else{
@@ -48,12 +48,12 @@ function add(){
 Function: store_zip()
 Description: sends a POST XML request to the server to add the zip to zip.json
 */
-function store_zip(zip) {
+function store_zip(zip,callback) {
   var postURL = "/";
   var postRequest = new XMLHttpRequest();
 
   postRequest.open('POST',postURL);
-  postRequest.seRequestHeader('Content-type','application/json');
+  postRequest.setRequestHeader('Content-Type','application/json');
 
   postRequest.addEventListener('load', function(event){
     var error;
@@ -62,8 +62,8 @@ function store_zip(zip) {
     }
     callback(error);
   });
-
-  var post_content = { zip: zip };
+  console.log('Zip: ' + zip);
+  var post_content = { zipCode: zip.toString() };
   postRequest.send(JSON.stringify(post_content));
 }
 

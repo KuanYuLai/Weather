@@ -2,6 +2,7 @@ var path = require("path");
 var fs = require("fs");
 var express = require("express");
 var exphbs = require("express-handlebars");
+var bodyParser = require("body-parser");
 
 //var weather = require("./weather");
 var zip = require("./zip");
@@ -14,6 +15,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //statically serve v0/public files
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'v0/public')));
 
 function httpGet(callback) {
@@ -36,8 +38,6 @@ app.get('/', function(req, res, next){
      httpGet("http://api.openweathermap.org/data/2.5/weather?zip="
     + zipcode +",us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial");
   });*/
-
-
   httpGet(function render(weather){
       var today = new Date();
       var dd = today.getDate();
@@ -62,16 +62,23 @@ app.get('/', function(req, res, next){
 });
 
 //post handler
-// app.post( , function(req, res, next) {
-//
-//   fs.writeFile('zip.json', JSON.stringify(zipData), function(err) {
-//     if (err) {
-//       res.status(500).send("Unable to save zip to \"database\"");
-//     } else {
-//       res.status(200).send();
-//     }
-//   });
-// });
+app.post('/', function(req, res, next) {
+  var zip = req.body.zipCode;
+  fs.readFile('zip.json','utf8',function(err, data) {
+    if(err){
+      console.log(err);
+    }else{
+      var obj = JSON.parse(data);
+      obj.sub.push(zip);
+      var json = JSON.stringify(obj);
+      fs.writeFile('zip.json',json,'utf8',function(err){
+        if(err){
+          console.log('Error: Unable to write zip.json.');
+        }
+      });
+    }
+  });
+});
 
 //404 handler
 app.get('*',function(req,res,next){
@@ -80,5 +87,5 @@ app.get('*',function(req,res,next){
 });
 
 app.listen(port, function(err){
-	console.log("Server runing on port: " + port);
+	console.log(" -- Server runing on port: " + port + " -- ");
 });
