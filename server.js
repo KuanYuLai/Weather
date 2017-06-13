@@ -32,7 +32,7 @@ function httpGet(url, callback) {
 }
 
 //main handler
-app.get('/', function(req, res, next){
+app.get('*', function(req, res, next){
 
   // Get Forecast Data
   fs.readFile('zip.json', 'utf-8', function(err, data){
@@ -119,12 +119,6 @@ app.post('/', function(req, res, next) {
       });
     }
   });
-});
-
-//404 handler
-app.get('*',function(req,res,next){
-  res.status(404);
-  res.render("404Page");
 });
 
 app.listen(port, function(err){
