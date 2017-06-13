@@ -175,6 +175,21 @@
     font-weight: 400;
   }
 
+  #popout{
+    width: 350px;
+    height: 230px;
+    margin-left: calc(50% - 175px);
+  }
+
+  .add-btn, .cancel-btn{
+    float: left;
+    width: calc(50% - 45px);
+  }
+
+  .cancel-btn{
+    margin-left: 10px;
+  }
+
   #first-wind, #second-wind, #third-wind, #fourth-wind{
     padding: 0;
   }
