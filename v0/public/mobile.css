@@ -397,5 +397,15 @@ article{
   /*background-color: purple;*/
   background-image: url('assets/bigSun.png');
   background-size: 400px 400px;
+  z-index: -2;
+}
+
+#cloud-a{
+  position: absolute;
+  width: 395px;
+  height: 213px;
+  background-size: 395px 213px;
   z-index: -1;
+  background-image: url('assets/clouds-a.png');
+  opacity: 0.4;
 }
