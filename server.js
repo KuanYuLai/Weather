@@ -125,6 +125,7 @@ app.get('/', function(req, res, next){
           return a.temperature - b.temperature;
         });
         res.render('weatherPage', templatesArgs);
+        res.status(200);
       }
 
 //===========================================================================
