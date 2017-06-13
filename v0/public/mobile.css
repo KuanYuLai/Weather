@@ -202,6 +202,7 @@ article{
 #current-speed span{
 	font-size: 12pt;
 	font-weight: 400;
+  margin-left: 2px;
 }
 
 .wind-wrapper{
