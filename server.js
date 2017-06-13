@@ -39,14 +39,26 @@ app.get('/', function(req, res, next){
     + zipcode +",us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial");
   });*/
   httpGet(function render(weather){
-    templatesArgs = {
-      local: {
-        temp: weather.main.temp | 0,
-        location: weather.name
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear();
+      if(dd<10){
+        dd = '0'+dd;
       }
-    }
-    res.render('weatherPage', templatesArgs);
-  });
+      if(mm<10){
+        mm='0'+mm;
+      }
+      today = mm + '/' + dd + '/' + yyyy;
+      templatesArgs = {
+        local: {
+          temp: weather.main.temp | 0,
+          location: weather.name,
+          date: today
+        }
+        }
+        res.render('weatherPage', templatesArgs);
+        })
 });
 
 //post handler

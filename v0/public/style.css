@@ -1,3 +1,6 @@
+#add-button p{
+  font-weight: 400;
+}
 @media (min-width: 640px) {
 
   /* change to double column for bottom temps. */
@@ -12,9 +15,7 @@
 
   .sub-display{
     max-width: 300px;
-
   }
-
 }
 
 @media (min-width: 768px) {
@@ -41,6 +42,7 @@
   }
 
   .sub-display h2{
+    font-weight: 400;
     margin-top: -42px;
     margin-bottom: 42px;
     margin-right: 40px;
@@ -55,7 +57,7 @@
 
   .timeOfDay{
   	float: left;
-  	font-weight: 100;
+  	font-weight: 400;
   	font-size: 12pt;
   }
 
@@ -67,6 +69,7 @@
 
   .forecast-item{
     /*background-color: blue;*/
+    font-weight: 400;
     float: left;
     width: 100px;
     margin: 0;
@@ -80,7 +83,7 @@
   #date{
     /*background-color: red;*/
     float: left;
-    font-weight: 100;
+    font-weight: 400;
     font-size: 16px;
     width: 350px;
     margin-top: 20px;
@@ -92,7 +95,7 @@
     /*background-color: brown;*/
     float: right;
     text-align: right;
-    font-weight: 100;
+    font-weight: 400;
     font-size: 16px;
     width: 340px;
     margin-top: 20px;
@@ -169,11 +172,16 @@
     /*background-color: brown;*/
     width: 40px;
     margin-left: 80px;
-    font-weight: 100;
+    font-weight: 400;
   }
 
   #first-wind, #second-wind, #third-wind, #fourth-wind{
     padding: 0;
+  }
+
+  #bigSun{
+    left: calc(100% - 300px);
+    top: -100px;
   }
 
 }
@@ -193,6 +201,7 @@
 
   .sub-display h2{
     font-size: 18pt;
+    font-weight: 400;
   }
 
   #add-button p{

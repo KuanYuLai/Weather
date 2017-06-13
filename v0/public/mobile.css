@@ -59,12 +59,12 @@ nav{
 	width: 130px;
 	margin: 0;
 	margin-top: 17px;
-	font-weight: 100;
+	font-weight: 400;
 	letter-spacing: 0.7px;
 }
 
 #logo p span{
-	font-weight: 500;
+	font-weight: 900;
 }
 
 #setting-icon{
@@ -121,7 +121,7 @@ article{
 
 #date{
 	font-size: 18px;
-	font-weight: 100;
+	font-weight: 400;
 	text-align: center;
 	margin-top: 7px;
 	letter-spacing: 0.7px;
@@ -147,12 +147,13 @@ article{
 	float: left;
 	width: auto;
 	height: 60px;
-	margin-left: calc(50% - 150px)
+	margin-left: calc(50% - 150px);
+  font-weight: 400;
 }
 
 .timeOfDay{
 	float: left;
-	font-weight: 100;
+	font-weight: 400;
 	font-size: 14pt;
 	width: 100px;
 	text-align: right;
@@ -200,7 +201,7 @@ article{
 
 #current-speed span{
 	font-size: 12pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 .wind-wrapper{
@@ -245,7 +246,7 @@ article{
 	position: relative;
 	float: right;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 	letter-spacing: 0.7;
 	margin-top: -30px;
 	margin-bottom: 20px;
@@ -256,7 +257,7 @@ article{
 	position: relative;
 	top: -5px;
 	font-size: 12pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 #add-button{
@@ -273,7 +274,7 @@ article{
 	margin-bottom: 24px;
 	margin-left: 25px;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 #backdrop{
@@ -384,4 +385,28 @@ article{
 
 .hidden{
 	display: none;
+}
+
+/****** Background Styles ******/
+
+#bigSun{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: calc(100% - 180px);
+  top: -180px;
+  /*background-color: purple;*/
+  background-image: url('assets/bigSun.png');
+  background-size: 400px 400px;
+  z-index: -2;
+}
+
+#cloud-a{
+  position: absolute;
+  width: 395px;
+  height: 213px;
+  background-size: 395px 213px;
+  z-index: -1;
+  background-image: url('assets/clouds-a.png');
+  opacity: 0.4;
 }

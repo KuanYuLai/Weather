@@ -79,7 +79,7 @@ function add_dom(zip) {
     if(xhr.readyState == 4) {
       var weather = JSON.parse(xhr.responseText);
       var templateArgs = {
-        temperature: weather.main.temp,
+        temperature: weather.main.temp | 0,
         location: weather.name,
       };
       var subDisplayHTML = subDisplayTemplate(templateArgs);
