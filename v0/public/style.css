@@ -1,3 +1,6 @@
+#add-button p{
+  font-weight: 400;
+}
 @media (min-width: 640px) {
 
   /* change to double column for bottom temps. */
@@ -12,9 +15,7 @@
 
   .sub-display{
     max-width: 300px;
-
   }
-
 }
 
 @media (min-width: 768px) {
@@ -41,6 +42,7 @@
   }
 
   .sub-display h2{
+    font-weight: 400;
     margin-top: -42px;
     margin-bottom: 42px;
     margin-right: 40px;
@@ -67,6 +69,7 @@
 
   .forecast-item{
     /*background-color: blue;*/
+    font-weight: 400;
     float: left;
     width: 100px;
     margin: 0;
@@ -203,7 +206,6 @@
 
   #add-button p{
     font-size: 18pt;
-    font-weight: 400;
   }
 
   #date{

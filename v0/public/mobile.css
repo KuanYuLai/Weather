@@ -121,7 +121,7 @@ article{
 
 #date{
 	font-size: 18px;
-	font-weight: 100;
+	font-weight: 400;
 	text-align: center;
 	margin-top: 7px;
 	letter-spacing: 0.7px;
@@ -147,12 +147,13 @@ article{
 	float: left;
 	width: auto;
 	height: 60px;
-	margin-left: calc(50% - 150px)
+	margin-left: calc(50% - 150px);
+  font-weight: 400;
 }
 
 .timeOfDay{
 	float: left;
-	font-weight: 100;
+	font-weight: 400;
 	font-size: 14pt;
 	width: 100px;
 	text-align: right;
@@ -200,7 +201,7 @@ article{
 
 #current-speed span{
 	font-size: 12pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 .wind-wrapper{
@@ -245,7 +246,7 @@ article{
 	position: relative;
 	float: right;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 	letter-spacing: 0.7;
 	margin-top: -30px;
 	margin-bottom: 20px;
@@ -273,7 +274,7 @@ article{
 	margin-bottom: 24px;
 	margin-left: 25px;
 	font-size: 16pt;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 #backdrop{
