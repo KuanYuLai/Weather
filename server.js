@@ -30,6 +30,22 @@ function httpGet(url, callback) {
   xhr.send();
 }
 
+var descDecider = function(desc){
+
+  if(desc == 'overcast clouds'){
+    return 'mostly-cloudy-use';
+  } else if (desc == 'clear sky') {
+    return 'sunny-use';
+  } else if (desc == 'scattered clouds') {
+    return 'part-cloudy-use';
+  } else if (desc == 'light rain') {
+    return 'cloudy-use';
+  } else {
+    return 'part-cloudy-use';
+  }
+
+}
+
 //main handler
 app.get('/', function(req, res, next){
   // Get Forecast Data
@@ -60,13 +76,13 @@ app.get('/', function(req, res, next){
              date: today,
              temp: weather.list[0].main.temp | 0,
              noonD: weather.list[1].main.temp | 0,
-             noonImg: 'cloudy-use',
+             noonImg: descDecider(weather.list[1].main.description),
              afternoonD: weather.list[2].main.temp | 0,
-             afternoonImg: 'mostly-cloudy-use',
+             afternoonImg: descDecider(weather.list[2].main.description),
              eveningD: weather.list[3].main.temp | 0,
-             eveningImg: 'sunny-use',
+             eveningImg: descDecider(weather.list[3].main.description),
              tonightD: weather.list[4].main.temp | 0,
-             tonightImg: 'sunny-use',
+             tonightImg: descDecider(weather.list[4].main.description),
              curSp: weather.list[0].wind.speed | 0,
              ow: weather.list[1].wind.speed | 0,
              sw: weather.list[2].wind.speed | 0,
