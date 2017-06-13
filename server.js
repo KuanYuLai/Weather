@@ -20,17 +20,15 @@ function httpGet(callback) {
   var xhr = new XMLHttpRequest(),
   url = "http://api.openweathermap.org/data/2.5/weather?zip=97331,us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial";
 
-  xhr.open('GET', url, true);
-  xhr.send();
-
   xhr.onreadystatechange = function() {
     if(this.readyState == 4) {
       var weather = JSON.parse(this.responseText);
+      console.log(weather.name);
       callback(weather);
       }
-
   };
-return xhr.onreadystatechange();
+  xhr.open('GET', url, true);
+  xhr.send();
 }
 
 //main handler
