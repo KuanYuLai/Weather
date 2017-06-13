@@ -390,7 +390,7 @@ article{
 }
 
 .sub-delete{
-  background-color: rgb(247, 59, 59);
+  background-color: rgba(247, 59, 59,0);
   border-radius: 80px;
   position: relative;
   margin: 7px 0px;

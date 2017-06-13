@@ -205,7 +205,7 @@
   }
 
   .sub-delete{
-    background-color: rgb(247, 59, 59);
+    background-color: rgba(247, 59, 59,0);
     border-radius: 80px;
     margin: 19px 0px;
     max-width: 430px;
@@ -261,7 +261,7 @@
   }
 
   .sub-delete{
-    background-color: rgb(247, 59, 59);
+    background-color: rgba(247, 59, 59,0);
     border-radius: 80px;
     margin: 15px 0px;
     max-width: 430px;
