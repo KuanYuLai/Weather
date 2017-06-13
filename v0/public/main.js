@@ -1,14 +1,20 @@
 //globals
 var backdrop = document.getElementById('backdrop');
 var popout = document.getElementById('popout');
-
+var setting = false;
 /*
 Function: show()
 Description: shows the hidden elements
 */
-function show() {
+function show(p) {
   backdrop.classList.remove('hidden');
   popout.classList.remove('hidden');
+  if(p == true)
+    console.log("setting");
+  else {
+    console.log("add location");
+  }
+  setting = p;
 }
 
 /*
@@ -30,13 +36,23 @@ function add(){
   //this is some black magic for checking zip codes
   var val_zip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip.toString());
   if(val_zip){
-    store_zip(zip,function (err) {
-      if(err){
-        console.log('Error: unable to save location');
-      }
-    });
-    add_dom(zip);
-    hide();
+    if(!setting){
+      store_zip(zip,function (err) {
+        if(err){
+          console.log('Error: unable to save location');
+        }
+      });
+      add_dom(zip);
+      hide();
+    }
+    else{
+      forecast_zip(zip, function(err) {
+          if(err){
+            console.log('Error: unable to save location');
+          }
+      });
+      hide();
+    }
   }else{
     console.log("Error: Invalid zip code.");
     alert("Invalid zip code!");
@@ -63,7 +79,30 @@ function store_zip(zip,callback) {
     callback(error);
   });
   console.log('Zip: ' + zip);
-  var post_content = { zipCode: zip.toString() };
+  var post_content = { zipCode: zip.toString(), setting: false };
+  postRequest.send(JSON.stringify(post_content));
+}
+
+/*
+Function: forecast_zip()
+Description: sends a POST XML request to the server to change the forecast zip to zip.json
+*/
+function forecast_zip(zip,callback) {
+  var postURL = "/";
+  var postRequest = new XMLHttpRequest();
+
+  postRequest.open('POST',postURL);
+  postRequest.setRequestHeader('Content-Type','application/json');
+
+  postRequest.addEventListener('load', function(event){
+    var error;
+    if(event.target.status !== 200){
+      error = event.target.response;
+    }
+    callback(error);
+  });
+  console.log('Zip: ' + zip);
+  var post_content = { zipCode: zip.toString(), setting: true };
   postRequest.send(JSON.stringify(post_content));
 }
 
@@ -134,8 +173,9 @@ function remove(zip){
 
 //listeners
   window.addEventListener('DOMContentLoaded',function(event){
-  document.getElementById('addLocation').addEventListener("click", show);
+  document.getElementById('addLocation').addEventListener("click", function(){show(false)});
   document.querySelector('.add-btn').addEventListener('click', add);
   document.querySelector('.close-btn').addEventListener('click', hide);
-  document.querySelector('.cancel-btn').addEventListener('click', hide);
+  document.querySelector('.cancel-btn').addEventListener('click', hide)
+  document.getElementById('setting-icon').addEventListener("click", function(){show(true)});
 });

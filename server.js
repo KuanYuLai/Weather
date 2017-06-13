@@ -109,20 +109,28 @@ app.use(express.static(path.join(__dirname, 'v0/public')));
 //post handler
 app.post('/', function(req, res, next) {
   var zip = req.body.zipCode;
-  fs.readFile('zip.json','utf8',function(err, data) {
-    if(err){
-      console.log(err);
-    }else{
-      var obj = JSON.parse(data);
-      obj.sub.push(zip);
-      var json = JSON.stringify(obj, null, 2);
-      fs.writeFile('zip.json',json,'utf8',function(err){
-        if(err){
-          console.log('Error: Unable to write zip.json.');
+  var setting = req.body.setting;
+    fs.readFile('zip.json','utf8',function(err, data) {
+      if(err){
+        console.log(err);
+      }else{
+        var obj = JSON.parse(data);
+
+        if(!setting){
+          obj.sub.push(zip);
         }
-      });
-    }
-  });
+        else{
+          obj.main = zip;
+        }
+
+        var json = JSON.stringify(obj, null, 2);
+        fs.writeFile('zip.json',json,'utf8',function(err){
+          if(err){
+            console.log('Error: Unable to write zip.json.');
+          }
+        });
+      }
+    });//readFile
 });
 
 //404 handler
