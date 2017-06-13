@@ -117,14 +117,15 @@ app.get('/', function(req, res, next){
             if(data)
               templatesArgs["sub"].push(data);
 
-            if(templatesArgs.sub.length == sub.length){
-              templatesArgs.sub.sort(function(a, b){
-                return a.temperature - b.temperature;
-              });
-              res.render('weatherPage', templatesArgs);
-            }
         });
       });//forEach
+
+      if(templatesArgs.sub.length == sub.length){
+        templatesArgs.sub.sort(function(a, b){
+          return a.temperature - b.temperature;
+        });
+        res.render('weatherPage', templatesArgs);
+      }
 
 //===========================================================================
 
