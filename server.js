@@ -33,15 +33,17 @@ function httpGet(url, callback) {
 
 //main handler
 app.get('/', function(req, res, next){
-  var main;
+
+  // Get Forecast Data
   fs.readFile('zip.json', 'utf-8', function(err, data){
       if(err)
         throw err;
       else {
         var maincode = JSON.parse(data);
-        main = maincode.main;
+        var main = maincode.main;
+        var sub = maincode.sub;
         httpGet("http://api.openweathermap.org/data/2.5/forecast?zip=" + main + ",us&appid=01d189351de6cfc4bf0155a1e9734f03&units=imperial",
-          function render(weather){
+          function (weather){
 
          var today = new Date();
          var dd = today.getDate();
@@ -68,12 +70,36 @@ app.get('/', function(req, res, next){
              sw: weather.list[2].wind.speed | 0,
              tw: weather.list[3].wind.speed | 0,
              fw: weather.list[4].wind.speed | 0
-           }
-         }
-           res.render('weatherPage', templatesArgs);
-           })
-         }
-      });//fs.readFile
+           },
+           sub:[]
+         };//END Get Forecast Data
+
+//====================Get Sub Data===========================================
+        //console.log(sub);
+        sub.forEach(function(value){
+          httpGet("http://api.openweathermap.org/data/2.5/weather?zip="+ value + ",us&appid=01d189351de6cfc4bf0155a1e9734f03&units=imperial",
+        function(weather){
+            var data = {
+              location: weather.name,
+              temperature: weather.main.temp | 0
+            };
+            if(data)
+              templatesArgs["sub"].push(data);
+
+            if(templatesArgs.sub.length == sub.length){
+              res.render('weatherPage', templatesArgs);
+            }
+        });
+      });//forEach
+
+//===========================================================================
+
+        })
+      }
+    });//fs.readFile
+
+
+
   });
 
 //post handler
