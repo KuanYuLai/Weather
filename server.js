@@ -5,7 +5,6 @@ var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 
 //var weather = require("./weather");
-var zip = require("./zip");
 var app = express();
 var port = process.env.PORT || 3000;
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -18,15 +17,15 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'v0/public')));
 
-function httpGet(callback) {
-  var xhr = new XMLHttpRequest(),
-  url = "http://api.openweathermap.org/data/2.5/weather?zip=97331,us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial";
+function httpGet(url, callback) {
+  var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function() {
     if(this.readyState == 4) {
       var weather = JSON.parse(this.responseText);
-      callback(weather);
       }
+      if(weather)
+        callback(weather);
   };
   xhr.open('GET', url, true);
   xhr.send();
@@ -34,32 +33,48 @@ function httpGet(callback) {
 
 //main handler
 app.get('/', function(req, res, next){
-   /*zip["sub"].forEach(function(zipcode){
-     httpGet("http://api.openweathermap.org/data/2.5/weather?zip="
-    + zipcode +",us&appid=01d189351de6cfc4bf0155a1e9734f03&&units=imperial");
-  });*/
-  httpGet(function render(weather){
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1;
-      var yyyy = today.getFullYear();
-      if(dd<10){
-        dd = '0'+dd;
-      }
-      if(mm<10){
-        mm='0'+mm;
-      }
-      today = mm + '/' + dd + '/' + yyyy;
-      templatesArgs = {
-        local: {
-          temp: weather.main.temp | 0,
-          location: weather.name,
-          date: today
-        }
-        }
-        res.render('weatherPage', templatesArgs);
-        })
-});
+  var main;
+  fs.readFile('zip.json', 'utf-8', function(err, data){
+      if(err)
+        throw err;
+      else {
+        var maincode = JSON.parse(data);
+        main = maincode.main;
+        httpGet("http://api.openweathermap.org/data/2.5/forecast?zip=" + main + ",us&appid=01d189351de6cfc4bf0155a1e9734f03&units=imperial",
+          function render(weather){
+
+         var today = new Date();
+         var dd = today.getDate();
+         var mm = today.getMonth()+1;
+         var yyyy = today.getFullYear();
+         if(dd<10){
+           dd = '0'+dd;
+         }
+         if(mm<10){
+           mm='0'+mm;
+         }
+         today = mm + '/' + dd + '/' + yyyy;
+         templatesArgs = {
+           local: {
+             location: weather.city.name,
+             date: today,
+             temp: weather.list[0].main.temp | 0,
+             noonD: weather.list[1].main.temp | 0,
+             afternoonD: weather.list[2].main.temp | 0,
+             eveningD: weather.list[3].main.temp | 0,
+             tonightD: weather.list[4].main.temp | 0,
+             curSp: weather.list[0].wind.speed | 0,
+             ow: weather.list[1].wind.speed | 0,
+             sw: weather.list[2].wind.speed | 0,
+             tw: weather.list[3].wind.speed | 0,
+             fw: weather.list[4].wind.speed | 0
+           }
+         }
+           res.render('weatherPage', templatesArgs);
+           })
+         }
+      });//fs.readFile
+  });
 
 //post handler
 app.post('/', function(req, res, next) {
@@ -70,7 +85,7 @@ app.post('/', function(req, res, next) {
     }else{
       var obj = JSON.parse(data);
       obj.sub.push(zip);
-      var json = JSON.stringify(obj);
+      var json = JSON.stringify(obj, null, 2);
       fs.writeFile('zip.json',json,'utf8',function(err){
         if(err){
           console.log('Error: Unable to write zip.json.');
