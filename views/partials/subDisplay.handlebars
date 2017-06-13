@@ -1,4 +1,9 @@
-<article class="sub-display">
+<article id='{{zip}}' class="sub-display" onmouseover="disappear()" onmouseout="appear()">
+  <div id='back' class='hidden'>
+    <button class="sub-delete">Delete</button>
+  </div>
+  <div id='front'>
   <h1>{{temperature}}<span>&#8457;</span></h1>
   <h2>{{location}}</h2>
+  </div>
 </article>

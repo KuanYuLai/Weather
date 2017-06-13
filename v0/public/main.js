@@ -91,10 +91,37 @@ function add_dom(zip) {
   xhr.send();
 }
 
+/*
+function remove()
+Description: remove sub-display
+*/
+function remove(){
+
+}
+
+/*
+function appear()
+Description: show front
+*/
+function appear(){
+  document.getElementById('front').classList.remove('hidden')
+  document.getElementById('back').classList.add('hidden')
+}
+
+/*
+function appear()
+Description: hide front
+*/
+function disappear(){
+  document.getElementById('front').classList.add('hidden')
+  document.getElementById('back').classList.remove('hidden')
+}
+
 //listeners
-window.addEventListener('DOMContentLoaded',function(event){
+  window.addEventListener('DOMContentLoaded',function(event){
   document.getElementById('addLocation').addEventListener("click", show);
   document.querySelector('.add-btn').addEventListener('click', add);
   document.querySelector('.close-btn').addEventListener('click', hide);
   document.querySelector('.cancel-btn').addEventListener('click', hide);
+  document.querySelector('.sub-delete').addEventListener('click', remove);
 });

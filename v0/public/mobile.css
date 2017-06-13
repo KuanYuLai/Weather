@@ -389,6 +389,21 @@ article{
 	display: none;
 }
 
+.sub-delete{
+  background-color: rgb(247, 59, 59);
+  border-radius: 80px;
+  position: relative;
+  margin: 7px 0px;
+  left: 42%;
+  max-width: 430px;
+  height: 56px;
+  width: 56px;
+  border: 0px;
+  color: white;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
 /****** Background Styles ******/
 
 #bigSun{
