@@ -82,7 +82,8 @@ app.get('/', function(req, res, next){
               temperature: weather.main.temp | 0,
               zipCode: value,
               disappear: "disappear(" + value + ")",
-              appear: "appear(" + value + ")"
+              appear: "appear(" + value + ")",
+              remove: "remove(" + value + ")"
             };
             if(data)
               templatesArgs["sub"].push(data);

@@ -83,7 +83,8 @@ function add_dom(zip) {
         location: weather.name,
         zipCode: zip,
         disappear: "disappear(" + zip.toString() + ")",
-        appear: "appear(" + zip.toString() + ")"
+        appear: "appear(" + zip.toString() + ")",
+        remove: "remove(" + zip.toString() + ")"
       };
       var subDisplayHTML = subDisplayTemplate(templateArgs);
       var subDisplayContainer = document.getElementsByClassName('sub-display-container')[0];
@@ -120,6 +121,15 @@ function disappear(zip){
     if(n[i].id == 'back')
       n[i].classList.remove('hidden')
   }
+}
+
+/*
+function: remove()
+Description: remove sub display
+*/
+function remove(zip){
+  //write the remove code here
+  console.log(zip);
 }
 
 //listeners
